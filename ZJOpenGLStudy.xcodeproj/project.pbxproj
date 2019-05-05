@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AF8014D227E99EC00F5607E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8014C227E99EC00F5607E /* AppDelegate.m */; };
-		1AF80150227E99EC00F5607E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8014F227E99EC00F5607E /* ViewController.m */; };
 		1AF80152227E99EE00F5607E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF80151227E99EE00F5607E /* Assets.xcassets */; };
 		1AF80155227E99EE00F5607E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF80153227E99EE00F5607E /* Main.storyboard */; };
-		1AF80158227E99EE00F5607E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF80157227E99EE00F5607E /* main.m */; };
 		1AF80163227E99EE00F5607E /* ZJOpenGLStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF80162227E99EE00F5607E /* ZJOpenGLStudyTests.m */; };
 		1AF8016E227E99EE00F5607E /* ZJOpenGLStudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8016D227E99EE00F5607E /* ZJOpenGLStudyUITests.m */; };
+		1AF80190227E9A5300F5607E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
+		1AF80192227E9A6400F5607E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
+		1AF80197227E9B0500F5607E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AF80196227E9B0500F5607E /* main.cpp */; };
+		1AF80198227E9B4000F5607E /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +36,9 @@
 
 /* Begin PBXFileReference section */
 		1AF80148227E99EC00F5607E /* ZJOpenGLStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJOpenGLStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AF8014B227E99EC00F5607E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1AF8014C227E99EC00F5607E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1AF8014E227E99EC00F5607E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1AF8014F227E99EC00F5607E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1AF80151227E99EE00F5607E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF80154227E99EE00F5607E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AF80156227E99EE00F5607E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF80157227E99EE00F5607E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AF80159227E99EE00F5607E /* ZJOpenGLStudy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZJOpenGLStudy.entitlements; sourceTree = "<group>"; };
 		1AF8015E227E99EE00F5607E /* ZJOpenGLStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJOpenGLStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF80162227E99EE00F5607E /* ZJOpenGLStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJOpenGLStudyTests.m; sourceTree = "<group>"; };
@@ -50,6 +46,24 @@
 		1AF80169227E99EE00F5607E /* ZJOpenGLStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJOpenGLStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF8016D227E99EE00F5607E /* ZJOpenGLStudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJOpenGLStudyUITests.m; sourceTree = "<group>"; };
 		1AF8016F227E99EE00F5607E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF8017C227E9A2B00F5607E /* libGLTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLTools.a; sourceTree = "<group>"; };
+		1AF8017F227E9A3000F5607E /* GLBatchBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBatchBase.h; sourceTree = "<group>"; };
+		1AF80180227E9A3000F5607E /* math3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math3d.h; sourceTree = "<group>"; };
+		1AF80181227E9A3000F5607E /* GLTriangleBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTriangleBatch.h; sourceTree = "<group>"; };
+		1AF80182227E9A3000F5607E /* GLBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBatch.h; sourceTree = "<group>"; };
+		1AF80183227E9A3000F5607E /* GLMatrixStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMatrixStack.h; sourceTree = "<group>"; };
+		1AF80184227E9A3000F5607E /* GLFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFrame.h; sourceTree = "<group>"; };
+		1AF80185227E9A3000F5607E /* GLFrustum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFrustum.h; sourceTree = "<group>"; };
+		1AF80186227E9A3000F5607E /* GLGeometryTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLGeometryTransform.h; sourceTree = "<group>"; };
+		1AF80187227E9A3000F5607E /* GLShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLShaderManager.h; sourceTree = "<group>"; };
+		1AF80188227E9A3000F5607E /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
+		1AF8018A227E9A3000F5607E /* glxew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glxew.h; sourceTree = "<group>"; };
+		1AF8018B227E9A3000F5607E /* wglew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wglew.h; sourceTree = "<group>"; };
+		1AF8018C227E9A3000F5607E /* glew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
+		1AF8018D227E9A3000F5607E /* GLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTools.h; sourceTree = "<group>"; };
+		1AF8018F227E9A5300F5607E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1AF80191227E9A6400F5607E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		1AF80196227E9B0500F5607E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF80198227E9B4000F5607E /* libGLTools.a in Frameworks */,
+				1AF80192227E9A6400F5607E /* GLUT.framework in Frameworks */,
+				1AF80190227E9A5300F5607E /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 				1AF80161227E99EE00F5607E /* ZJOpenGLStudyTests */,
 				1AF8016C227E99EE00F5607E /* ZJOpenGLStudyUITests */,
 				1AF80149227E99EC00F5607E /* Products */,
+				1AF8018E227E9A5300F5607E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,15 +118,12 @@
 		1AF8014A227E99EC00F5607E /* ZJOpenGLStudy */ = {
 			isa = PBXGroup;
 			children = (
-				1AF8014B227E99EC00F5607E /* AppDelegate.h */,
-				1AF8014C227E99EC00F5607E /* AppDelegate.m */,
-				1AF8014E227E99EC00F5607E /* ViewController.h */,
-				1AF8014F227E99EC00F5607E /* ViewController.m */,
+				1AF8017B227E9A1900F5607E /* Lib */,
 				1AF80151227E99EE00F5607E /* Assets.xcassets */,
 				1AF80153227E99EE00F5607E /* Main.storyboard */,
 				1AF80156227E99EE00F5607E /* Info.plist */,
-				1AF80157227E99EE00F5607E /* main.m */,
 				1AF80159227E99EE00F5607E /* ZJOpenGLStudy.entitlements */,
+				1AF80196227E9B0500F5607E /* main.cpp */,
 			);
 			path = ZJOpenGLStudy;
 			sourceTree = "<group>";
@@ -129,6 +144,53 @@
 				1AF8016F227E99EE00F5607E /* Info.plist */,
 			);
 			path = ZJOpenGLStudyUITests;
+			sourceTree = "<group>";
+		};
+		1AF8017B227E9A1900F5607E /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1AF8017E227E9A3000F5607E /* include */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		1AF8017E227E9A3000F5607E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				1AF8017F227E9A3000F5607E /* GLBatchBase.h */,
+				1AF80180227E9A3000F5607E /* math3d.h */,
+				1AF80181227E9A3000F5607E /* GLTriangleBatch.h */,
+				1AF80182227E9A3000F5607E /* GLBatch.h */,
+				1AF80183227E9A3000F5607E /* GLMatrixStack.h */,
+				1AF80184227E9A3000F5607E /* GLFrame.h */,
+				1AF80185227E9A3000F5607E /* GLFrustum.h */,
+				1AF80186227E9A3000F5607E /* GLGeometryTransform.h */,
+				1AF80187227E9A3000F5607E /* GLShaderManager.h */,
+				1AF80188227E9A3000F5607E /* StopWatch.h */,
+				1AF80189227E9A3000F5607E /* GL */,
+				1AF8018D227E9A3000F5607E /* GLTools.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		1AF80189227E9A3000F5607E /* GL */ = {
+			isa = PBXGroup;
+			children = (
+				1AF8018A227E9A3000F5607E /* glxew.h */,
+				1AF8018B227E9A3000F5607E /* wglew.h */,
+				1AF8018C227E9A3000F5607E /* glew.h */,
+			);
+			path = GL;
+			sourceTree = "<group>";
+		};
+		1AF8018E227E9A5300F5607E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AF8017C227E9A2B00F5607E /* libGLTools.a */,
+				1AF80191227E9A6400F5607E /* GLUT.framework */,
+				1AF8018F227E9A5300F5607E /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF80150227E99EC00F5607E /* ViewController.m in Sources */,
-				1AF80158227E99EE00F5607E /* main.m in Sources */,
-				1AF8014D227E99EC00F5607E /* AppDelegate.m in Sources */,
+				1AF80197227E9B0500F5607E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +488,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZJOpenGLStudy/Lib/include\"";
 				INFOPLIST_FILE = ZJOpenGLStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZJOpenGLStudy/Lib",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,10 +512,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZJOpenGLStudy/Lib/include\"";
 				INFOPLIST_FILE = ZJOpenGLStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZJOpenGLStudy/Lib",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

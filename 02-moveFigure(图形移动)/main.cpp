@@ -27,6 +27,11 @@ GLfloat vVerts[] = {
     -blockSize, blockSize, 0.0f
 };
 
+// X 轴上移动的距离
+GLfloat xPos = 0.0f;
+// Y 轴上移动的距离
+GLfloat yPos = 0.0f;
+
 //窗口大小改变时接受新的宽度和高度，其中0,0代表窗口中视口的左下角坐标，w，h代表像素
 void ChangeSize(int w,int h)
 
@@ -36,8 +41,8 @@ void ChangeSize(int w,int h)
     
 }
 
-// 操作键盘移动
-void Speacialkeys(int key,int x, int y){
+// 移动方法一
+void SpeacialkeysFunOne(int key,int x, int y){
     // 步长
     GLfloat stepSize = 0.025f;
     // 相对点
@@ -106,7 +111,10 @@ void Speacialkeys(int key,int x, int y){
     
     glutPostRedisplay();
 }
-
+// 操作键盘移动
+void Speacialkeys(int key,int x, int y){
+    SpeacialkeysFunOne(key, x, y);
+}
 //为程序作一次性的设置
 void SetupRC()
 
@@ -118,18 +126,7 @@ void SetupRC()
     //没有着色器，在OpenGL 核心框架中是无法进行任何渲染的。初始化一个渲染管理器。
     //在前面的课程，我们会采用固管线渲染，后面会学着用OpenGL着色语言来写着色器
     shaderManager.InitializeStockShaders();
-    
-    //设置三角形，其中数组vVert包含所有3个顶点的x,y,笛卡尔坐标对。
-//
-//    GLfloat vVerts[] = {
-//
-//        -0.5f,0.0f,0.0f,
-//
-//        0.5f,0.0f,0.0f,
-//
-//        0.0f,0.5f,0.0f,
-//
-//    };
+
     
     //修改为GL_TRIANGLE_FAN ，4个顶点
     triangleBatch.Begin(GL_TRIANGLE_FAN,4);

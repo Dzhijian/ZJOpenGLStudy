@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  ZJOpenGLStudy
+//  01-ConfigOpenGL
 //
-//  Created by James on 2019/5/5.
+//  Created by 邓志坚 on 2019/5/6.
 //  Copyright © 2019 James. All rights reserved.
 //
 

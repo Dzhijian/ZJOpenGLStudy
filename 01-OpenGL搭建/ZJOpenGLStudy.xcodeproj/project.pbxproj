@@ -7,45 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AF80152227E99EE00F5607E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF80151227E99EE00F5607E /* Assets.xcassets */; };
-		1AF80155227E99EE00F5607E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF80153227E99EE00F5607E /* Main.storyboard */; };
-		1AF80163227E99EE00F5607E /* ZJOpenGLStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF80162227E99EE00F5607E /* ZJOpenGLStudyTests.m */; };
-		1AF8016E227E99EE00F5607E /* ZJOpenGLStudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8016D227E99EE00F5607E /* ZJOpenGLStudyUITests.m */; };
-		1AF80190227E9A5300F5607E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
-		1AF80192227E9A6400F5607E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
-		1AF80197227E9B0500F5607E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AF80196227E9B0500F5607E /* main.cpp */; };
-		1AF80198227E9B4000F5607E /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		04C45C8D22807326005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		04C45C8E2280732C005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
+		04C45C8F22807350005EB37D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
+		04C45C912280751D005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45C902280751D005EB37D /* main.cpp */; };
+		04C45CC822807B02005EB37D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
+		04C45CC922807B23005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		04C45CCA22807B30005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
+		04C45CCC22807B55005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45CCB22807B55005EB37D /* main.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1AF8015F227E99EE00F5607E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AF80140227E99EC00F5607E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AF80147227E99EC00F5607E;
-			remoteInfo = ZJOpenGLStudy;
-		};
-		1AF8016A227E99EE00F5607E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AF80140227E99EC00F5607E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AF80147227E99EC00F5607E;
-			remoteInfo = ZJOpenGLStudy;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1AF80148227E99EC00F5607E /* ZJOpenGLStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJOpenGLStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AF80151227E99EE00F5607E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1AF80154227E99EE00F5607E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1AF80156227E99EE00F5607E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF80159227E99EE00F5607E /* ZJOpenGLStudy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZJOpenGLStudy.entitlements; sourceTree = "<group>"; };
-		1AF8015E227E99EE00F5607E /* ZJOpenGLStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJOpenGLStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AF80162227E99EE00F5607E /* ZJOpenGLStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJOpenGLStudyTests.m; sourceTree = "<group>"; };
-		1AF80164227E99EE00F5607E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF80169227E99EE00F5607E /* ZJOpenGLStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJOpenGLStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AF8016D227E99EE00F5607E /* ZJOpenGLStudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJOpenGLStudyUITests.m; sourceTree = "<group>"; };
-		1AF8016F227E99EE00F5607E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C45C7C228072BE005EB37D /* 01-ConfigOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-ConfigOpenGL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C45C902280751D005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "02-MoveFigure(图形移动).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C45CCB22807B55005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "02-moveFigure(图形移动)/main.cpp"; sourceTree = SOURCE_ROOT; };
 		1AF8017C227E9A2B00F5607E /* libGLTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLTools.a; sourceTree = "<group>"; };
 		1AF8017F227E9A3000F5607E /* GLBatchBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBatchBase.h; sourceTree = "<group>"; };
 		1AF80180227E9A3000F5607E /* math3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math3d.h; sourceTree = "<group>"; };
@@ -63,43 +39,54 @@
 		1AF8018D227E9A3000F5607E /* GLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTools.h; sourceTree = "<group>"; };
 		1AF8018F227E9A5300F5607E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		1AF80191227E9A6400F5607E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		1AF80196227E9B0500F5607E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1AF80145227E99EC00F5607E /* Frameworks */ = {
+		04C45C79228072BE005EB37D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF80198227E9B4000F5607E /* libGLTools.a in Frameworks */,
-				1AF80192227E9A6400F5607E /* GLUT.framework in Frameworks */,
-				1AF80190227E9A5300F5607E /* OpenGL.framework in Frameworks */,
+				04C45C8F22807350005EB37D /* OpenGL.framework in Frameworks */,
+				04C45C8E2280732C005EB37D /* GLUT.framework in Frameworks */,
+				04C45C8D22807326005EB37D /* libGLTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AF8015B227E99EE00F5607E /* Frameworks */ = {
+		04C45CB422807AF5005EB37D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AF80166227E99EE00F5607E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				04C45CCA22807B30005EB37D /* GLUT.framework in Frameworks */,
+				04C45CC922807B23005EB37D /* libGLTools.a in Frameworks */,
+				04C45CC822807B02005EB37D /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C45C7D228072BE005EB37D /* 01-ConfigOpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				04C45C902280751D005EB37D /* main.cpp */,
+			);
+			path = "01-ConfigOpenGL";
+			sourceTree = "<group>";
+		};
+		04C45CB822807AF5005EB37D /* 02-MoveFigure(图形移动) */ = {
+			isa = PBXGroup;
+			children = (
+				04C45CCB22807B55005EB37D /* main.cpp */,
+			);
+			path = "02-MoveFigure(图形移动)";
+			sourceTree = "<group>";
+		};
 		1AF8013F227E99EC00F5607E = {
 			isa = PBXGroup;
 			children = (
-				1AF8014A227E99EC00F5607E /* ZJOpenGLStudy */,
-				1AF80161227E99EE00F5607E /* ZJOpenGLStudyTests */,
-				1AF8016C227E99EE00F5607E /* ZJOpenGLStudyUITests */,
+				1AF8017B227E9A1900F5607E /* Common */,
+				04C45C7D228072BE005EB37D /* 01-ConfigOpenGL */,
+				04C45CB822807AF5005EB37D /* 02-MoveFigure(图形移动) */,
 				1AF80149227E99EC00F5607E /* Products */,
 				1AF8018E227E9A5300F5607E /* Frameworks */,
 			);
@@ -108,51 +95,19 @@
 		1AF80149227E99EC00F5607E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AF80148227E99EC00F5607E /* ZJOpenGLStudy.app */,
-				1AF8015E227E99EE00F5607E /* ZJOpenGLStudyTests.xctest */,
-				1AF80169227E99EE00F5607E /* ZJOpenGLStudyUITests.xctest */,
+				04C45C7C228072BE005EB37D /* 01-ConfigOpenGL.app */,
+				04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1AF8014A227E99EC00F5607E /* ZJOpenGLStudy */ = {
-			isa = PBXGroup;
-			children = (
-				1AF8017B227E9A1900F5607E /* Lib */,
-				1AF80151227E99EE00F5607E /* Assets.xcassets */,
-				1AF80153227E99EE00F5607E /* Main.storyboard */,
-				1AF80156227E99EE00F5607E /* Info.plist */,
-				1AF80159227E99EE00F5607E /* ZJOpenGLStudy.entitlements */,
-				1AF80196227E9B0500F5607E /* main.cpp */,
-			);
-			path = ZJOpenGLStudy;
-			sourceTree = "<group>";
-		};
-		1AF80161227E99EE00F5607E /* ZJOpenGLStudyTests */ = {
-			isa = PBXGroup;
-			children = (
-				1AF80162227E99EE00F5607E /* ZJOpenGLStudyTests.m */,
-				1AF80164227E99EE00F5607E /* Info.plist */,
-			);
-			path = ZJOpenGLStudyTests;
-			sourceTree = "<group>";
-		};
-		1AF8016C227E99EE00F5607E /* ZJOpenGLStudyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1AF8016D227E99EE00F5607E /* ZJOpenGLStudyUITests.m */,
-				1AF8016F227E99EE00F5607E /* Info.plist */,
-			);
-			path = ZJOpenGLStudyUITests;
-			sourceTree = "<group>";
-		};
-		1AF8017B227E9A1900F5607E /* Lib */ = {
+		1AF8017B227E9A1900F5607E /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				1AF8017C227E9A2B00F5607E /* libGLTools.a */,
 				1AF8017E227E9A3000F5607E /* include */,
 			);
-			path = Lib;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		1AF8017E227E9A3000F5607E /* include */ = {
@@ -196,58 +151,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AF80147227E99EC00F5607E /* ZJOpenGLStudy */ = {
+		04C45C7B228072BE005EB37D /* 01-ConfigOpenGL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF80172227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudy" */;
+			buildConfigurationList = 04C45C8A228072BF005EB37D /* Build configuration list for PBXNativeTarget "01-ConfigOpenGL" */;
 			buildPhases = (
-				1AF80144227E99EC00F5607E /* Sources */,
-				1AF80145227E99EC00F5607E /* Frameworks */,
-				1AF80146227E99EC00F5607E /* Resources */,
+				04C45C78228072BE005EB37D /* Sources */,
+				04C45C79228072BE005EB37D /* Frameworks */,
+				04C45C7A228072BE005EB37D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ZJOpenGLStudy;
-			productName = ZJOpenGLStudy;
-			productReference = 1AF80148227E99EC00F5607E /* ZJOpenGLStudy.app */;
+			name = "01-ConfigOpenGL";
+			productName = "01-ConfigOpenGL";
+			productReference = 04C45C7C228072BE005EB37D /* 01-ConfigOpenGL.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1AF8015D227E99EE00F5607E /* ZJOpenGLStudyTests */ = {
+		04C45CB622807AF5005EB37D /* 02-MoveFigure(图形移动) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF80175227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudyTests" */;
+			buildConfigurationList = 04C45CC522807AF5005EB37D /* Build configuration list for PBXNativeTarget "02-MoveFigure(图形移动)" */;
 			buildPhases = (
-				1AF8015A227E99EE00F5607E /* Sources */,
-				1AF8015B227E99EE00F5607E /* Frameworks */,
-				1AF8015C227E99EE00F5607E /* Resources */,
+				04C45CB322807AF5005EB37D /* Sources */,
+				04C45CB422807AF5005EB37D /* Frameworks */,
+				04C45CB522807AF5005EB37D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1AF80160227E99EE00F5607E /* PBXTargetDependency */,
 			);
-			name = ZJOpenGLStudyTests;
-			productName = ZJOpenGLStudyTests;
-			productReference = 1AF8015E227E99EE00F5607E /* ZJOpenGLStudyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1AF80168227E99EE00F5607E /* ZJOpenGLStudyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF80178227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudyUITests" */;
-			buildPhases = (
-				1AF80165227E99EE00F5607E /* Sources */,
-				1AF80166227E99EE00F5607E /* Frameworks */,
-				1AF80167227E99EE00F5607E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1AF8016B227E99EE00F5607E /* PBXTargetDependency */,
-			);
-			name = ZJOpenGLStudyUITests;
-			productName = ZJOpenGLStudyUITests;
-			productReference = 1AF80169227E99EE00F5607E /* ZJOpenGLStudyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = "02-MoveFigure(图形移动)";
+			productName = "02-MoveFigure(图形移动)";
+			productReference = 04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -258,16 +194,11 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = James;
 				TargetAttributes = {
-					1AF80147227E99EC00F5607E = {
+					04C45C7B228072BE005EB37D = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					1AF8015D227E99EE00F5607E = {
+					04C45CB622807AF5005EB37D = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 1AF80147227E99EC00F5607E;
-					};
-					1AF80168227E99EE00F5607E = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 1AF80147227E99EC00F5607E;
 					};
 				};
 			};
@@ -284,31 +215,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AF80147227E99EC00F5607E /* ZJOpenGLStudy */,
-				1AF8015D227E99EE00F5607E /* ZJOpenGLStudyTests */,
-				1AF80168227E99EE00F5607E /* ZJOpenGLStudyUITests */,
+				04C45C7B228072BE005EB37D /* 01-ConfigOpenGL */,
+				04C45CB622807AF5005EB37D /* 02-MoveFigure(图形移动) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1AF80146227E99EC00F5607E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AF80152227E99EE00F5607E /* Assets.xcassets in Resources */,
-				1AF80155227E99EE00F5607E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AF8015C227E99EE00F5607E /* Resources */ = {
+		04C45C7A228072BE005EB37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AF80167227E99EE00F5607E /* Resources */ = {
+		04C45CB522807AF5005EB37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,57 +239,123 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1AF80144227E99EC00F5607E /* Sources */ = {
+		04C45C78228072BE005EB37D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF80197227E9B0500F5607E /* main.cpp in Sources */,
+				04C45C912280751D005EB37D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AF8015A227E99EE00F5607E /* Sources */ = {
+		04C45CB322807AF5005EB37D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF80163227E99EE00F5607E /* ZJOpenGLStudyTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AF80165227E99EE00F5607E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AF8016E227E99EE00F5607E /* ZJOpenGLStudyUITests.m in Sources */,
+				04C45CCC22807B55005EB37D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1AF80160227E99EE00F5607E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AF80147227E99EC00F5607E /* ZJOpenGLStudy */;
-			targetProxy = 1AF8015F227E99EE00F5607E /* PBXContainerItemProxy */;
-		};
-		1AF8016B227E99EE00F5607E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AF80147227E99EC00F5607E /* ZJOpenGLStudy */;
-			targetProxy = 1AF8016A227E99EE00F5607E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1AF80153227E99EE00F5607E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AF80154227E99EE00F5607E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
+		04C45C8B228072BF005EB37D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-1-ConfigOpenGL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		04C45C8C228072BF005EB37D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-1-ConfigOpenGL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		04C45CC622807AF5005EB37D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-2-MoveFigure------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04C45CC722807AF5005EB37D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-2-MoveFigure------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1AF80170227E99EE00F5607E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -480,163 +467,32 @@
 			};
 			name = Release;
 		};
-		1AF80173227E99EE00F5607E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ZJOpenGLStudy/ZJOpenGLStudy.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZJOpenGLStudy/Lib/include\"";
-				INFOPLIST_FILE = ZJOpenGLStudy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ZJOpenGLStudy/Lib",
-					"$(PROJECT_DIR)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		1AF80174227E99EE00F5607E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ZJOpenGLStudy/ZJOpenGLStudy.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ZJOpenGLStudy/Lib/include\"";
-				INFOPLIST_FILE = ZJOpenGLStudy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ZJOpenGLStudy/Lib",
-					"$(PROJECT_DIR)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		1AF80176227E99EE00F5607E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				INFOPLIST_FILE = ZJOpenGLStudyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJOpenGLStudy.app/Contents/MacOS/ZJOpenGLStudy";
-			};
-			name = Debug;
-		};
-		1AF80177227E99EE00F5607E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				INFOPLIST_FILE = ZJOpenGLStudyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJOpenGLStudy.app/Contents/MacOS/ZJOpenGLStudy";
-			};
-			name = Release;
-		};
-		1AF80179227E99EE00F5607E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				INFOPLIST_FILE = ZJOpenGLStudyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ZJOpenGLStudy;
-			};
-			name = Debug;
-		};
-		1AF8017A227E99EE00F5607E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = R65337KS8W;
-				INFOPLIST_FILE = ZJOpenGLStudyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = coder.james.ZJOpenGLStudyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = ZJOpenGLStudy;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04C45C8A228072BF005EB37D /* Build configuration list for PBXNativeTarget "01-ConfigOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C45C8B228072BF005EB37D /* Debug */,
+				04C45C8C228072BF005EB37D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C45CC522807AF5005EB37D /* Build configuration list for PBXNativeTarget "02-MoveFigure(图形移动)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C45CC622807AF5005EB37D /* Debug */,
+				04C45CC722807AF5005EB37D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1AF80143227E99EC00F5607E /* Build configuration list for PBXProject "ZJOpenGLStudy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AF80170227E99EE00F5607E /* Debug */,
 				1AF80171227E99EE00F5607E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1AF80172227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AF80173227E99EE00F5607E /* Debug */,
-				1AF80174227E99EE00F5607E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1AF80175227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AF80176227E99EE00F5607E /* Debug */,
-				1AF80177227E99EE00F5607E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1AF80178227E99EE00F5607E /* Build configuration list for PBXNativeTarget "ZJOpenGLStudyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AF80179227E99EE00F5607E /* Debug */,
-				1AF8017A227E99EE00F5607E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

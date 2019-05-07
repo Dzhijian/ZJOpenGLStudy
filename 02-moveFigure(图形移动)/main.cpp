@@ -41,7 +41,48 @@ void ChangeSize(int w,int h)
     
 }
 
-// 移动方法一
+// 移动方法二: 通过移动坐标系移动
+void speacialkeysFunTwo(int key , int x, int y){
+    GLfloat stepSize = 0.025f;
+    switch (key) {
+        case GLUT_KEY_UP:       // 上
+            yPos += stepSize;
+            break;
+        case GLUT_KEY_DOWN:     // 下
+            yPos -= stepSize;
+            break;
+        case GLUT_KEY_LEFT:     // 左
+            xPos -= stepSize;
+            break;
+        case GLUT_KEY_RIGHT:    // 右
+            xPos += stepSize;
+            break;
+        default:
+            break;
+    }
+    
+    // 边界检查
+    if (xPos < -1.0f + blockSize) {
+        xPos = -1.0f + blockSize;
+    }
+    
+    if (xPos > 1.0 - blockSize) {
+        xPos = 1.0 - blockSize;
+    }
+    
+    if (yPos < -1.0f + blockSize) {
+        yPos = -1.0f + blockSize;
+    }
+    
+    if (yPos > 1.0 - blockSize) {
+        yPos = 1.0 - blockSize;
+    }
+    
+    glutPostRedisplay();
+    
+}
+
+// 移动方法一: 修改点的坐标位置移动
 void SpeacialkeysFunOne(int key,int x, int y){
     // 步长
     GLfloat stepSize = 0.025f;
@@ -49,24 +90,21 @@ void SpeacialkeysFunOne(int key,int x, int y){
     GLfloat blockX = vVerts[0];
     GLfloat blockY = vVerts[10];
     
-    // 上移
-    if (key == GLUT_KEY_UP) {
-        blockY += stepSize;
-    }
-    
-    // 下移
-    if (key == GLUT_KEY_DOWN) {
-        blockY -= stepSize;
-    }
-    
-    // 左移
-    if (key == GLUT_KEY_LEFT) {
-        blockX -= stepSize;
-    }
-    
-    // 右移
-    if (key == GLUT_KEY_RIGHT) {
-        blockX += stepSize;
+    switch (key) {
+        case GLUT_KEY_UP:       // 上
+            blockY += stepSize;
+            break;
+        case GLUT_KEY_DOWN:     // 下
+            blockY -= stepSize;
+            break;
+        case GLUT_KEY_LEFT:     // 左
+            blockX -= stepSize;
+            break;
+        case GLUT_KEY_RIGHT:    // 右
+            blockX += stepSize;
+            break;
+        default:
+            break;
     }
     
     //触碰到边界（4个边界）的处理
@@ -113,7 +151,13 @@ void SpeacialkeysFunOne(int key,int x, int y){
 }
 // 操作键盘移动
 void Speacialkeys(int key,int x, int y){
-    SpeacialkeysFunOne(key, x, y);
+    
+    // 方法一:修改点的坐标位置移动
+//    SpeacialkeysFunOne(key, x, y);
+    
+    // 方法二:通过移动坐标系移动
+    speacialkeysFunTwo(key, x, y);
+
 }
 //为程序作一次性的设置
 void SetupRC()
@@ -127,12 +171,9 @@ void SetupRC()
     //在前面的课程，我们会采用固管线渲染，后面会学着用OpenGL着色语言来写着色器
     shaderManager.InitializeStockShaders();
 
-    
     //修改为GL_TRIANGLE_FAN ，4个顶点
     triangleBatch.Begin(GL_TRIANGLE_FAN,4);
-    
     triangleBatch.CopyVertexData3f(vVerts);
-    
     triangleBatch.End();
     
 }
@@ -143,13 +184,55 @@ void RenderScene(void)
 {
     
     //清除一个或一组特定的缓冲区
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     
     //设置一组浮点数来表示红色
     GLfloat vRed[] = {1.0f,0.0f,0.0f,1.0f};
     
     //传递到存储着色器，即GLT_SHADER_IDENTITY着色器，这个着色器只是使用指定颜色以默认笛卡尔坐标第在屏幕上渲染几何图形
-    shaderManager.UseStockShader(GLT_SHADER_IDENTITY,vRed);
+    // 方法一
+//    shaderManager.UseStockShader(GLT_SHADER_IDENTITY,vRed);
+    
+    // 方法二
+    /**
+     *  利用矩阵帮助移动
+     *  mFinalTransform     结果矩阵
+     *  mTransformMatrix    平移矩阵
+     *  mRotationMatrix     旋转矩阵
+     */
+    M3DMatrix44f mFinalTransform,mTransformMatrix,mRotatitionMatrix;
+    
+    // 平移 x,y,z,w(缩放因子 = 1)
+    // 3D 中平移的原理与矩阵之前的关系
+    /**
+     参数一: 矩阵
+     参数二,三,四: X,Y,Z 上平移距离
+     */
+    m3dTranslationMatrix44(mTransformMatrix, xPos, yPos, 0.0f);
+    
+    // 增加难度 一边移动,一边旋转
+    static float yRot = 0.0f;
+    
+    /**
+     参数一: 矩阵
+     参数二: 弧度
+     参数三,四,五: 1 0r 0 ,围绕X,Y,Z轴旋转
+     */
+    m3dRotationMatrix44(mRotatitionMatrix,m3dDegToRad(yRot), 0.0f, 0.0f, 1.0f);
+    
+    // 修改旋转
+    yRot += 5.0f;
+    
+    //思考: 结合两个矩阵的结果
+    m3dMatrixMultiply44(mFinalTransform, mTransformMatrix, mRotatitionMatrix);
+    // 平面着色器
+    /*
+     1. 平移矩阵 mTransformMatrix 与 每个顶点相乘 -> 新顶点(顶点着色器)
+     2. 将片元着色 红色(片元着色器)
+     */
+    shaderManager.UseStockShader(GLT_SHADER_FLAT,mFinalTransform,vRed);
+    
+    
     
     //提交着色器
     triangleBatch.Draw();

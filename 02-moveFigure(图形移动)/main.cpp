@@ -180,7 +180,6 @@ void SetupRC()
 
 //开始渲染
 void RenderScene(void)
-
 {
     
     //清除一个或一组特定的缓冲区

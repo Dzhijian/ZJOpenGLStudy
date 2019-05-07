@@ -15,6 +15,10 @@
 		04C45CC922807B23005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
 		04C45CCA22807B30005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
 		04C45CCC22807B55005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45CCB22807B55005EB37D /* main.cpp */; };
+		04C45CEE2281D174005EB37D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
+		04C45CEF2281D17C005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
+		04C45CF02281D187005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		04C45CF22281D1E4005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45CF12281D1E4005EB37D /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,8 @@
 		04C45C902280751D005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "02-MoveFigure(图形移动).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C45CCB22807B55005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "02-moveFigure(图形移动)/main.cpp"; sourceTree = SOURCE_ROOT; };
+		04C45CDD2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "03-MatrixAndShader(矩阵和着色器的使用).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C45CF12281D1E4005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1AF8017C227E9A2B00F5607E /* libGLTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLTools.a; sourceTree = "<group>"; };
 		1AF8017F227E9A3000F5607E /* GLBatchBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBatchBase.h; sourceTree = "<group>"; };
 		1AF80180227E9A3000F5607E /* math3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math3d.h; sourceTree = "<group>"; };
@@ -62,6 +68,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04C45CDA2281D167005EB37D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C45CF02281D187005EB37D /* libGLTools.a in Frameworks */,
+				04C45CEF2281D17C005EB37D /* GLUT.framework in Frameworks */,
+				04C45CEE2281D174005EB37D /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,12 +97,21 @@
 			path = "02-MoveFigure(图形移动)";
 			sourceTree = "<group>";
 		};
+		04C45CDE2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */ = {
+			isa = PBXGroup;
+			children = (
+				04C45CF12281D1E4005EB37D /* main.cpp */,
+			);
+			path = "03-MatrixAndShader(矩阵和着色器的使用)";
+			sourceTree = "<group>";
+		};
 		1AF8013F227E99EC00F5607E = {
 			isa = PBXGroup;
 			children = (
 				1AF8017B227E9A1900F5607E /* Common */,
 				04C45C7D228072BE005EB37D /* 01-ConfigOpenGL */,
 				04C45CB822807AF5005EB37D /* 02-MoveFigure(图形移动) */,
+				04C45CDE2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */,
 				1AF80149227E99EC00F5607E /* Products */,
 				1AF8018E227E9A5300F5607E /* Frameworks */,
 			);
@@ -97,6 +122,7 @@
 			children = (
 				04C45C7C228072BE005EB37D /* 01-ConfigOpenGL.app */,
 				04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */,
+				04C45CDD2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +211,23 @@
 			productReference = 04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */;
 			productType = "com.apple.product-type.application";
 		};
+		04C45CDC2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C45CEB2281D168005EB37D /* Build configuration list for PBXNativeTarget "03-MatrixAndShader(矩阵和着色器的使用)" */;
+			buildPhases = (
+				04C45CD92281D167005EB37D /* Sources */,
+				04C45CDA2281D167005EB37D /* Frameworks */,
+				04C45CDB2281D167005EB37D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "03-MatrixAndShader(矩阵和着色器的使用)";
+			productName = "03-MatrixAndShader(矩阵和着色器的使用)";
+			productReference = 04C45CDD2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用).app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,6 +241,9 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					04C45CB622807AF5005EB37D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					04C45CDC2281D167005EB37D = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -217,6 +263,7 @@
 			targets = (
 				04C45C7B228072BE005EB37D /* 01-ConfigOpenGL */,
 				04C45CB622807AF5005EB37D /* 02-MoveFigure(图形移动) */,
+				04C45CDC2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +277,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04C45CB522807AF5005EB37D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C45CDB2281D167005EB37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,6 +306,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C45CCC22807B55005EB37D /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C45CD92281D167005EB37D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C45CF22281D1E4005EB37D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +414,52 @@
 					"$(PROJECT_DIR)/Common",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "James.-2-MoveFigure------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		04C45CEC2281D168005EB37D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-3-MatrixAndShader-----------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04C45CED2281D168005EB37D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-3-MatrixAndShader-----------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -484,6 +592,15 @@
 			buildConfigurations = (
 				04C45CC622807AF5005EB37D /* Debug */,
 				04C45CC722807AF5005EB37D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C45CEB2281D168005EB37D /* Build configuration list for PBXNativeTarget "03-MatrixAndShader(矩阵和着色器的使用)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C45CEC2281D168005EB37D /* Debug */,
+				04C45CED2281D168005EB37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

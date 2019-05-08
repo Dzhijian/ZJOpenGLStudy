@@ -200,7 +200,46 @@ void SetupRC(void) {
     
     //三角形条带，一个小环或圆柱段
     //顶点下标
-//    int iCounter = 0;
+    int iCounter = 0;
+    //半径
+    GLfloat radius = 3.0f;
+    //从0度~360度，以0.3弧度为步长
+    for(GLfloat angle = 0.0f; angle <= (2.0f*M3D_PI); angle += 0.3f)
+    {
+        //或许圆形的顶点的X,Y
+        GLfloat x = radius * sin(angle);
+        GLfloat y = radius * cos(angle);
+        
+        //绘制2个三角形（他们的x,y顶点一样，只是z点不一样）
+        vPoints[iCounter][0] = x;
+        vPoints[iCounter][1] = y;
+        vPoints[iCounter][2] = -0.5;
+        iCounter++;
+        
+        vPoints[iCounter][0] = x;
+        vPoints[iCounter][1] = y;
+        vPoints[iCounter][2] = 0.5;
+        iCounter++;
+    }
+    
+    // 关闭循环
+    printf("三角形带的顶点数：%d\n",iCounter);
+    //结束循环，在循环位置生成2个三角形
+    vPoints[iCounter][0] = vPoints[0][0];
+    vPoints[iCounter][1] = vPoints[0][1];
+    vPoints[iCounter][2] = -0.5;
+    iCounter++;
+    
+    vPoints[iCounter][0] = vPoints[1][0];
+    vPoints[iCounter][1] = vPoints[1][1];
+    vPoints[iCounter][2] = 0.5;
+    iCounter++;
+    
+    // GL_TRIANGLE_STRIP 共用一个条带（strip）上的顶点的一组三角形
+    triangleStripBatch.Begin(GL_TRIANGLE_STRIP, iCounter);
+    triangleStripBatch.CopyVertexData3f(vPoints);
+    triangleStripBatch.End();
+
     
     
     
@@ -209,17 +248,77 @@ void SetupRC(void) {
 // 修改窗口大小
 void ChangeSize(int w, int h){
     glViewport(0, 0, w, h);
+    // 创建透视投影
+    viewFrustum.SetPerspective(35.0, w/h, 1.0f, 500.0f);
+    // viewFrustum.GetProjectionMatrix() 获取投影矩阵
+    // 把投影矩阵加载到投影堆栈projectionMatrix
+    projectionMatrix.LoadMatrix(viewFrustum.GetProjectionMatrix());
 }
 
 // 点击空格时,调用函数
 // x,y: 光标的位置
 void KeyPressFunc(unsigned char key, int x,int y){
     // key == 32 32的 ASC2码,是空格.
+    
+    if (key == 32) {
+        nStep++;
+        if (nStep > 6) {
+            nStep = 0;
+        }
+    }
+    // 设置窗口名称
+    switch (nStep) {
+        case 0:
+            glutSetWindowTitle("GL_POINTS");
+            break;
+        case 1:
+            glutSetWindowTitle("GL_LINES");
+            break;
+        case 2:
+            glutSetWindowTitle("GL_LINE_STEIP");
+            break;
+        case 3:
+            glutSetWindowTitle("GL_LINE_LOOP");
+            break;
+        case 4:
+            glutSetWindowTitle("GL_TRIANGLES");
+            break;
+        case 5:
+            glutSetWindowTitle("GL_TRIANGLE_STRIP");
+            break;
+        case 6:
+            glutSetWindowTitle("GL_TRIANGLE_FAN");
+            break;
+            
+        default:
+            break;
+    }
+    // 调用RenderScene 重新渲染
+    glutPostRedisplay();
+    
 }
 
 // 特殊键位键盘(上下左右)
 void Speacialkeys(int key, int x, int y){
-    
+    // 通过移动世界坐标来产生物体旋转的功能.
+    if (key == GLUT_KEY_UP) {
+        // 围绕 X 轴旋转
+        objectFrame.RotateWorld(m3dDegToRad(-5.0f), 1.0f, 0.0f, 0.0f);
+    }
+    if (key == GLUT_KEY_DOWN) {
+        // 围绕 X 轴旋转
+        objectFrame.RotateWorld(m3dDegToRad(5.0f), 1.0f, 0.0f, 0.0f);
+    }
+    if (key == GLUT_KEY_LEFT) {
+        // 围绕 Y 轴旋转
+        objectFrame.RotateWorld(m3dDegToRad(-5.0f), 0.0f, 1.0f, 0.0f);
+    }
+    if (key == GLUT_KEY_RIGHT) {
+        // 围绕 Y 轴旋转
+        objectFrame.RotateWorld(m3dDegToRad(5.0f), 0.0f, 1.0f, 0.0f);
+    }
+    // 重新渲染
+    glutPostRedisplay();
 }
 
 // 鼠标点击事件
@@ -230,10 +329,80 @@ void MouseKey(int button, int state, int x, int y){
     
 }
 
+// 深度测试
+void DrawWireFramedBatch(GLBatch* pBatch)
+{
+    
+}
 // 开始渲染
 void RenderScene(void)
 {
+    // 1.清除屏幕
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+    // 压栈
+    modelViewMatrix.PushMatrix();
+    M3DMatrix44f mCamera;
+    // 获取cameraFrame中的矩阵交给 mCamera
+    cameraFrame.GetCameraMatrix(mCamera);
+    
+    modelViewMatrix.MultMatrix(mCamera);
+    
+    // 获取投影矩阵
+    M3DMatrix44f mObjectFrame;
+    objectFrame.GetCameraMatrix(mObjectFrame);
+
+    modelViewMatrix.MultMatrix(mObjectFrame);
+    
+    /* GLShaderManager 中的Uniform 值——平面着色器
+     参数1：平面着色器
+     参数2：运行为几何图形变换指定一个 4 * 4变换矩阵
+     --transformPipeline.GetModelViewProjectionMatrix() 获取的
+     GetMatrix函数就可以获得矩阵堆栈顶部的值
+     参数3：颜色值（黑色）
+     */
+    // 通过固定管线绘图
+    shaderManager.UseStockShader(GLT_SHADER_FLAT,transformPipeline.GetModelViewProjectionMatrix(),vBlack);
+    
+    switch(nStep) {
+        case 0:
+            //设置点的大小
+            glPointSize(4.0f);
+            pointBatch.Draw();
+            glPointSize(1.0f);
+            break;
+        case 1:
+            //设置线的宽度
+            glLineWidth(2.0f);
+            lineBatch.Draw();
+            glLineWidth(1.0f);
+            break;
+        case 2:
+            glLineWidth(2.0f);
+            lineStripBatch.Draw();
+            glLineWidth(1.0f);
+            break;
+        case 3:
+            glLineWidth(2.0f);
+            lineLoopBatch.Draw();
+            glLineWidth(1.0f);
+            break;
+        case 4:
+            DrawWireFramedBatch(&triangleBatch);
+            break;
+        case 5:
+            DrawWireFramedBatch(&triangleStripBatch);
+            break;
+        case 6:
+            DrawWireFramedBatch(&triangleFanBatch);
+            break;
+    }
+    
+    //还原到以前的模型视图矩阵（单位矩阵）
+    modelViewMatrix.PopMatrix();
+    
+    // 进行缓冲区交换
+    glutSwapBuffers();
 }
 
 

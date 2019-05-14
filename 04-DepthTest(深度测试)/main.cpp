@@ -61,7 +61,20 @@ void ChangeSize (int w, int h){
 }
 
 void SpecialhKeys (int key, int w, int h){
+    if(key == GLUT_KEY_UP)
+        viewFrame.RotateWorld(m3dDegToRad(-5.0), 1.0f, 0.0f, 0.0f);
     
+    if(key == GLUT_KEY_DOWN)
+        viewFrame.RotateWorld(m3dDegToRad(5.0), 1.0f, 0.0f, 0.0f);
+    
+    if(key == GLUT_KEY_LEFT)
+        viewFrame.RotateWorld(m3dDegToRad(-5.0), 0.0f, 1.0f, 0.0f);
+    
+    if(key == GLUT_KEY_RIGHT)
+        viewFrame.RotateWorld(m3dDegToRad(5.0), 0.0f, 1.0f, 0.0f);
+    
+    //重新刷新window
+    glutPostRedisplay();
 }
 
 // 召唤场景
@@ -81,7 +94,10 @@ void RenderScene (void){
     }else{
         glDisable(GL_CULL_FACE);
     }
-
+    
+    // 是否开启深度测试
+    iDepth ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
+    
     modelViewMatix.PushMatrix(viewFrame);
     GLfloat vRed[] = {1.0f, 0.0f, 0.0f, 1.0f};
     
@@ -134,10 +150,22 @@ void ProcessMenu(int value){
         case 1:
             iCull = !iCull;
             break;
-            
+        case 2:
+            iDepth = !iDepth;
+            break;
+        case 3:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+            break;
+        case 4:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            break;
+        case 5:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+            break;
         default:
             break;
     }
+    glutPostRedisplay();
 }
 
 
@@ -172,6 +200,10 @@ int main(int argc,char* argv[])
     // 参数一: 菜单栏中选项的名称
     // 参数二 : value 值 1
     glutAddMenuEntry("Toggle cull backFace", 1);
+    glutAddMenuEntry("Toggle depth test", 2);
+    glutAddMenuEntry("Set Fill Mode", 3);
+    glutAddMenuEntry("Set line Mode", 4);
+    glutAddMenuEntry("Set Point Mode", 5);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
     
     GLenum err = glewInit();

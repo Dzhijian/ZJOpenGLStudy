@@ -23,6 +23,10 @@
 		04C45D092289D5DB005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
 		04C45D0A2289D5E5005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
 		04C45D0C2289D61C005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45D0B2289D61C005EB37D /* main.cpp */; };
+		04C45D22228C5737005EB37D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
+		04C45D23228C573E005EB37D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
+		04C45D24228C5749005EB37D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		04C45D26228C579F005EB37D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C45D25228C579F005EB37D /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,8 @@
 		04C45CF12281D1E4005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		04C45CF72289D5B6005EB37D /* 04-DepthTest(深度测试).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "04-DepthTest(深度测试).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C45D0B2289D61C005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		04C45D11228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05-AntiAliasing(抗锯齿多重采样).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C45D25228C579F005EB37D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1AF8017C227E9A2B00F5607E /* libGLTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLTools.a; sourceTree = "<group>"; };
 		1AF8017F227E9A3000F5607E /* GLBatchBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBatchBase.h; sourceTree = "<group>"; };
 		1AF80180227E9A3000F5607E /* math3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math3d.h; sourceTree = "<group>"; };
@@ -94,6 +100,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04C45D0E228C5726005EB37D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C45D24228C5749005EB37D /* libGLTools.a in Frameworks */,
+				04C45D23228C573E005EB37D /* GLUT.framework in Frameworks */,
+				04C45D22228C5737005EB37D /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +145,14 @@
 			path = "04-DepthTest(深度测试)";
 			sourceTree = "<group>";
 		};
+		04C45D12228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样) */ = {
+			isa = PBXGroup;
+			children = (
+				04C45D25228C579F005EB37D /* main.cpp */,
+			);
+			path = "05-AntiAliasing(抗锯齿多重采样)";
+			sourceTree = "<group>";
+		};
 		1AF8013F227E99EC00F5607E = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +161,7 @@
 				04C45CB822807AF5005EB37D /* 02-MoveFigure(图形移动) */,
 				04C45CDE2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */,
 				04C45CF82289D5B6005EB37D /* 04-DepthTest(深度测试) */,
+				04C45D12228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样) */,
 				1AF80149227E99EC00F5607E /* Products */,
 				1AF8018E227E9A5300F5607E /* Frameworks */,
 			);
@@ -149,6 +174,7 @@
 				04C45CB722807AF5005EB37D /* 02-MoveFigure(图形移动).app */,
 				04C45CDD2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用).app */,
 				04C45CF72289D5B6005EB37D /* 04-DepthTest(深度测试).app */,
+				04C45D11228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,6 +297,23 @@
 			productReference = 04C45CF72289D5B6005EB37D /* 04-DepthTest(深度测试).app */;
 			productType = "com.apple.product-type.application";
 		};
+		04C45D10228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C45D1F228C5726005EB37D /* Build configuration list for PBXNativeTarget "05-AntiAliasing(抗锯齿多重采样)" */;
+			buildPhases = (
+				04C45D0D228C5726005EB37D /* Sources */,
+				04C45D0E228C5726005EB37D /* Frameworks */,
+				04C45D0F228C5726005EB37D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "05-AntiAliasing(抗锯齿多重采样)";
+			productName = "05-AntiAliasing(抗锯齿多重采样)";
+			productReference = 04C45D11228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样).app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +335,9 @@
 					04C45CF62289D5B6005EB37D = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					04C45D10228C5726005EB37D = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 1AF80143227E99EC00F5607E /* Build configuration list for PBXProject "ZJOpenGLStudy" */;
@@ -311,6 +357,7 @@
 				04C45CB622807AF5005EB37D /* 02-MoveFigure(图形移动) */,
 				04C45CDC2281D167005EB37D /* 03-MatrixAndShader(矩阵和着色器的使用) */,
 				04C45CF62289D5B6005EB37D /* 04-DepthTest(深度测试) */,
+				04C45D10228C5726005EB37D /* 05-AntiAliasing(抗锯齿多重采样) */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +385,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04C45CF52289D5B6005EB37D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C45D0F228C5726005EB37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,6 +430,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C45D0C2289D61C005EB37D /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C45D0D228C5726005EB37D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C45D26228C579F005EB37D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +634,52 @@
 			};
 			name = Release;
 		};
+		04C45D20228C5726005EB37D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-5-AntiAliasing---------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04C45D21228C5726005EB37D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R65337KS8W;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Common/include\"";
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Common",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "James.-5-AntiAliasing---------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1AF80170227E99EE00F5607E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +826,15 @@
 			buildConfigurations = (
 				04C45D052289D5B7005EB37D /* Debug */,
 				04C45D062289D5B7005EB37D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C45D1F228C5726005EB37D /* Build configuration list for PBXNativeTarget "05-AntiAliasing(抗锯齿多重采样)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C45D20228C5726005EB37D /* Debug */,
+				04C45D21228C5726005EB37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

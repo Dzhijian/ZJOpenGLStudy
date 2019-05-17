@@ -36,6 +36,33 @@ GLBatch moonBatch;
 // 选择菜单
 void ProcessMenu(int value) {
     
+    switch (value) {
+        case 1:
+            // 打开抗锯齿功能
+            // 1.开启混合功能
+            glEnable(GL_BLEND);
+            // 2.指定混合因子
+            // 注意:如果你修改了混合方程式,当你使用混合抗锯齿功能时,请一定要改为默认混合方式
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            
+            // 3.开启对点线面多边形的抗锯齿功能
+            glEnable(GL_POINT_SMOOTH);
+            glEnable(GL_LINE_SMOOTH);
+            glEnable(GL_POLYGON_SMOOTH);
+            
+            break;
+        case 2:
+            // 关闭抗锯齿功能
+            glDisable(GL_BLEND);
+            glDisable(GL_POINT_SMOOTH);
+            glDisable(GL_LINE_SMOOTH);
+            glDisable(GL_POLYGON_SMOOTH);
+            break;
+            
+        default:
+            break;
+    }
+    glutPostRedisplay();
 }
 
 
@@ -136,6 +163,37 @@ void SetUpRC() {
 //场景召唤
 void RenderScene() {
     
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    // 定义白色
+    GLfloat vWhite[] = {1.0f, 1.0f, 1.0f, 1.0f};
+
+    // 使用平面着色器
+    // 平面着色器
+    // 投影矩阵
+    // 颜色,白色
+    shaderManager.UseStockShader(GLT_SHADER_FLAT,viewFrustum.GetProjectionMatrix(), vWhite);
+    
+    
+    // 绘制小星星
+    glPointSize(1.0f);
+    smallStarBatch.Draw();
+    
+    // 绘制中星星
+    glPointSize(4.0);
+    mediumStarBatch.Draw();
+    
+    //绘制大星星
+    glPointSize(8.0f);
+    largeStarBatch.Draw();
+    
+    // 绘制地平线
+    glLineWidth(3.5);
+    mountainRangeBatch.Draw();
+    
+    // 绘制月亮
+    moonBatch.Draw();
+    glutSwapBuffers();
 }
 
 int main (int argc, char *argv[]) {

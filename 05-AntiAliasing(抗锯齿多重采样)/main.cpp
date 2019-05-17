@@ -174,6 +174,17 @@ void RenderScene() {
     // 颜色,白色
     shaderManager.UseStockShader(GLT_SHADER_FLAT,viewFrustum.GetProjectionMatrix(), vWhite);
     
+    // 多重采样和混合一起使用!
+    // 关闭多重采样
+    glDisable(GLUT_MULTISAMPLE);
+    // 开启混合
+    glEnable(GL_BLEND);
+    //设置混合因子
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    // 对点线来进行混合抗锯齿
+    glEnable(GL_POINT_SMOOTH);
+    glEnable(GL_LINE_SMOOTH);
     
     // 绘制小星星
     glPointSize(1.0f);
@@ -187,12 +198,23 @@ void RenderScene() {
     glPointSize(8.0f);
     largeStarBatch.Draw();
     
+    
+    
     // 绘制地平线
     glLineWidth(3.5);
     mountainRangeBatch.Draw();
     
+    // 关闭电线的抗锯齿处理
+    glDisable(GL_POINT_SMOOTH);
+    glDisable(GL_LINE_SMOOTH);
+    
+    
+    // 选择用多重采样解决抗锯齿问题
+    glEnable(GLUT_MULTISAMPLE);
     // 绘制月亮
     moonBatch.Draw();
+    
+    glDisable(GLUT_MULTISAMPLE);
     glutSwapBuffers();
 }
 
@@ -207,7 +229,7 @@ int main (int argc, char *argv[]) {
      GLUT_DEPTH : 深度缓存区
      GLUT_STENCIL : 模板缓存区
      */
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);
     // 设置窗口大小
     glutInitWindowSize(800, 600);
     // 窗口名称

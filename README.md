@@ -12,6 +12,6 @@
 
 五、[OpenGL学习 纹理上(五)](https://dzhijian.github.io/2018/02/11/15244707402194.html)
 
-六、[OpenGL学习 纹理下(五)](https://dzhijian.github.io/2018/02/15/OpenGL%20纹理下（五）.html)
+六、[OpenGL学习 纹理下(五)](https://dzhijian.github.io/2018/02/15/OpenGL%20纹理下（六）.html)
 
 

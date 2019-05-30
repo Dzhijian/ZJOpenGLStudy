@@ -115,12 +115,147 @@ void ChangeSize(int w, int h){
     transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);
 }
 
+// 进行调用以绘制场景
 void RenderScene(){
+    
+    // 颜色值 地板值 甜甜圈颜色
+    static GLfloat vFloorColor[] = {0.0f, 1.0f, 0.0f, 1.0f};
+    static GLfloat vTorusColor[] = {1.0f, 0.0f, 0.0f, 1.0f};
+    
+    // 2.球颜色
+    static GLfloat vSphereColor[] = { 0.0f, 0.0f, 1.0f, 1.0f};
+    
+    // 基于时间动画
+    static CStopWatch rotTimer;
+    float yRot = rotTimer.GetElapsedSeconds() * 60.0f;
+    
+    // 清除颜色缓存区和深度缓存区
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    // 将当前的模型视图矩阵压入矩阵堆栈(单位矩阵)
+    // 因为我们先绘制地面,而地面是不需要有任何变换的.所以在开始渲染时保证矩阵状态,然后在结束时使用相应的 PopMatrix 恢复它.这样就不必在每一次渲染时重载单位矩阵了.
+    modelViewMatrix.PushMatrix();
+    
+    // 3.设置照相机矩阵
+    M3DMatrix44f mCamera;
+    
+    // 从 cameraFrame中获取一个 4 * 4 的矩阵
+    cameraFrame.GetCameraMatrix(mCamera);
+    // 将照相机矩阵压入模型视图堆栈中
+    modelViewMatrix.PushMatrix(mCamera);
+    
+    // 4.添加光源
+    M3DVector4f vLightPos = {0.0f, 10.0f,5.0f, 1.0f};
+    M3DVector4f vLightEyePos;
+    
+    //将照相机矩阵mCamera 与 光源矩阵vLightPos 相乘获得vLightEyePos 矩阵
+    m3dTransformVector4(vLightEyePos, vLightPos, mCamera);
+    
+    
+    // 绘制地面(平面着色器)
+    /*
+     参数一: GLT_SHADER_FLAT
+     参数二: 4*4矩阵（模型视图投影矩阵
+     参数三: 颜色数组
+     */
+    shaderManager.UseStockShader(GLT_SHADER_FLAT,transformPipeline.GetModelViewProjectionMatrix(),vFloorColor);
+    
+    floorBatch.Draw();
+    
+    // 绘制悬浮球体
+    // 使用 sphereBatch 绘制.
+    // 思路: 循环绘制 50 个蓝色悬浮球体,绘制一个压栈一个,绘制完成出栈一个
+    
+    for (int i = 0; i < NUM_SPHERES; i++) {
+        modelViewMatrix.PushMatrix();
+        modelViewMatrix.MultMatrix(spheres[i]);
+        
+        // shaderManager.UseStockShader(GLT_SHADER_FLAT,transformPipeline.GetModelViewProjectionMatrix(),vSphereColor);
+        //**4、绘制光源，修改着色器管理器
+        /**绘制光源，修改着色器管理器
+         参数1：GLT_SHADER_TEXTURE_POINT_LIGHT_DIFF
+         参数2：模型视图矩阵
+         参数3：投影矩阵
+         参数4：视点坐标系中的光源位置
+         参数5：基本漫反射颜色
+         参数6：颜色
+         */
+        shaderManager.UseStockShader(GLT_SHADER_POINT_LIGHT_DIFF,transformPipeline.GetModelViewMatrix(),
+                                     transformPipeline.GetProjectionMatrix(),vLightEyePos,vSphereColor);
+        sphereBatch.Draw();
+        
+        modelViewMatrix.PopMatrix();
+    }
+    
+    // 绘制旋转甜甜圈
+    modelViewMatrix.Translate(0.0f, 0.0f, -2.5f);
+    
+    // 保存平移(公转自转)
+    modelViewMatrix.PushMatrix();
+    
+    //modelViewMatrix 顶部矩阵旋转yRot度
+    modelViewMatrix.Rotate(yRot, 0.0f, 1.0f, 0.0f);
+    
+    //使用平面着色器 变换管道中的投影矩阵 和 变换矩阵 相乘的矩阵，指定甜甜圈颜色
+    //shaderManager.UseStockShader(GLT_SHADER_FLAT, transformPipeline.GetModelViewProjectionMatrix(),vTorusColor);
+    //**4、绘制光源，修改着色器管理器
+
+    shaderManager.UseStockShader(GLT_SHADER_POINT_LIGHT_DIFF,transformPipeline.GetModelViewMatrix(),
+                                 transformPipeline.GetProjectionMatrix(),vLightEyePos,vTorusColor);
+    
+    // 开始绘制
+    torusBatch.Draw();
+    
+    // 恢复 modelViewMatrix 矩阵,移除矩阵堆栈
+    // 使用 PopMatrix 推出刚刚变换的矩阵,然后恢复到单位矩阵
+    modelViewMatrix.PopMatrix();
+    
+    // 绘制公转球体(公转自转)
+    modelViewMatrix.Rotate(yRot * -2.0f, 0.0f, 1.0f, 0.0f);
+    modelViewMatrix.Translate(0.8f, 0.0f, 0.0f);
+    //shaderManager.UseStockShader(GLT_SHADER_FLAT,transformPipeline.GetModelViewProjectionMatrix(),vSphereColor);
+    //**4、绘制光源，修改着色器管理器
+    shaderManager.UseStockShader(GLT_SHADER_POINT_LIGHT_DIFF,transformPipeline.GetModelViewMatrix(),
+                                 transformPipeline.GetProjectionMatrix(),vLightEyePos,vSphereColor);
+    sphereBatch.Draw();
+    //恢复矩阵(公转自转)**
+    modelViewMatrix.PopMatrix();
+    
+    modelViewMatrix.PopMatrix();
+    
+    // 执行缓存区交换
+    glutSwapBuffers();
+    
+    // 重新显示一遍
+    glutPostRedisplay();
     
 }
 
-void SpeacialKeys(int kays ,int x, int y ){
+//**3.移动照相机参考帧，来对方向键作出响应
+void SpeacialKeys(int key ,int x, int y ){
     
+    float linear = 0.1f;
+    float angular = float(m3dDegToRad(5.0f));
+    
+    if (key == GLUT_KEY_UP) {
+        //MoveForward 平移
+        cameraFrame.MoveForward(linear);
+    }
+    
+    if (key == GLUT_KEY_DOWN) {
+        //MoveForward 平移
+        cameraFrame.MoveForward(-linear);
+    }
+    
+    if (key == GLUT_KEY_LEFT) {
+        //RotateWorld 旋转
+        cameraFrame.RotateWorld(angular, 0.0f, 1.0f, 0.0f);
+    }
+    
+    if (key == GLUT_KEY_RIGHT) {
+        //RotateWorld 旋转
+        cameraFrame.RotateWorld(-angular, 0.0f, 1.0f, 0.0f);
+    }
 }
 
 int main (int argc, char *argv[]) {

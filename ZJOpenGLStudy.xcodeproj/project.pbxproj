@@ -11,6 +11,14 @@
 		044479F022C521380014CD5D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
 		044479F122C521400014CD5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
 		044479F222C521530014CD5D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
+		046757BC22C66ACC00014048 /* ceiling.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B422C66ACB00014048 /* ceiling.tga */; };
+		046757BD22C66ACC00014048 /* SphereMap.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B522C66ACB00014048 /* SphereMap.tga */; };
+		046757BE22C66ACC00014048 /* stone.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B622C66ACB00014048 /* stone.tga */; };
+		046757BF22C66ACC00014048 /* Marslike.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B722C66ACB00014048 /* Marslike.tga */; };
+		046757C022C66ACC00014048 /* MoonLike.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B822C66ACB00014048 /* MoonLike.tga */; };
+		046757C122C66ACC00014048 /* floor.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757B922C66ACB00014048 /* floor.tga */; };
+		046757C222C66ACC00014048 /* Marble.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757BA22C66ACB00014048 /* Marble.tga */; };
+		046757C322C66ACC00014048 /* brick.tga in Resources */ = {isa = PBXBuildFile; fileRef = 046757BB22C66ACC00014048 /* brick.tga */; };
 		04A2ABFE229EDDAD0056BA3D /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF80191227E9A6400F5607E /* GLUT.framework */; };
 		04A2ABFF229EDDB40056BA3D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8018F227E9A5300F5607E /* OpenGL.framework */; };
 		04A2AC00229EDDBC0056BA3D /* libGLTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF8017C227E9A2B00F5607E /* libGLTools.a */; };
@@ -40,6 +48,14 @@
 /* Begin PBXFileReference section */
 		044479DD22C520860014CD5D /* 07-PyramidTexture(金字塔纹理).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "07-PyramidTexture(金字塔纹理).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		044479EE22C520AF0014CD5D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		046757B422C66ACB00014048 /* ceiling.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = ceiling.tga; sourceTree = "<group>"; };
+		046757B522C66ACB00014048 /* SphereMap.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = SphereMap.tga; sourceTree = "<group>"; };
+		046757B622C66ACB00014048 /* stone.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = stone.tga; sourceTree = "<group>"; };
+		046757B722C66ACB00014048 /* Marslike.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marslike.tga; sourceTree = "<group>"; };
+		046757B822C66ACB00014048 /* MoonLike.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = MoonLike.tga; sourceTree = "<group>"; };
+		046757B922C66ACB00014048 /* floor.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = floor.tga; sourceTree = "<group>"; };
+		046757BA22C66ACB00014048 /* Marble.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marble.tga; sourceTree = "<group>"; };
+		046757BB22C66ACC00014048 /* brick.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = brick.tga; sourceTree = "<group>"; };
 		04A2ABED229EDD9A0056BA3D /* 06-公转自转Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "06-公转自转Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A2AC01229EDE0B0056BA3D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		04C45C7C228072BE005EB37D /* 01-ConfigOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-ConfigOpenGL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,9 +164,25 @@
 		044479DE22C520860014CD5D /* 07-PyramidTexture(金字塔纹理) */ = {
 			isa = PBXGroup;
 			children = (
+				046757B322C66A5F00014048 /* Source */,
 				044479EE22C520AF0014CD5D /* main.cpp */,
 			);
 			path = "07-PyramidTexture(金字塔纹理)";
+			sourceTree = "<group>";
+		};
+		046757B322C66A5F00014048 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				046757BB22C66ACC00014048 /* brick.tga */,
+				046757B422C66ACB00014048 /* ceiling.tga */,
+				046757B922C66ACB00014048 /* floor.tga */,
+				046757BA22C66ACB00014048 /* Marble.tga */,
+				046757B722C66ACB00014048 /* Marslike.tga */,
+				046757B822C66ACB00014048 /* MoonLike.tga */,
+				046757B522C66ACB00014048 /* SphereMap.tga */,
+				046757B622C66ACB00014048 /* stone.tga */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		04A2ABEE229EDD9A0056BA3D /* 06-公转自转Demo */ = {
@@ -461,6 +493,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046757BD22C66ACC00014048 /* SphereMap.tga in Resources */,
+				046757C222C66ACC00014048 /* Marble.tga in Resources */,
+				046757BE22C66ACC00014048 /* stone.tga in Resources */,
+				046757BF22C66ACC00014048 /* Marslike.tga in Resources */,
+				046757C122C66ACC00014048 /* floor.tga in Resources */,
+				046757C022C66ACC00014048 /* MoonLike.tga in Resources */,
+				046757C322C66ACC00014048 /* brick.tga in Resources */,
+				046757BC22C66ACC00014048 /* ceiling.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

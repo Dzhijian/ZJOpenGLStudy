@@ -27,6 +27,7 @@ GLMatrixStack                   modelViewMatrix;        // 模型视图矩阵
 GLMatrixStack                   projectionMatrix;       // 投影矩阵
 GLFrame                         cameraFrame;            // 观察者 照相机
 GLFrame                         objectFrame;            // 
+GLFrustum                       viewFrustum;             // 透视投影
 
 GLBatch                         pyramidBatch;            // 金字塔
 GLuint                          textureID;               // 纹理变量,一般使用无符号整型
@@ -63,6 +64,7 @@ void MakePyramid (GLBatch &pyramidBatch) {
     // 设置顶点坐标
     pyramidBatch.Vertex3f(-1.0f, -1.0f, -1.0f);
     
+    
     //------vBlackRight------------
     pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
     pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
@@ -87,11 +89,11 @@ void MakePyramid (GLBatch &pyramidBatch) {
     pyramidBatch.Vertex3f(1.0f, -1.0f, 1.0f);
     
     // 塔顶
-    M3DVector3f vApex = {0.0f, 1.0f, 0.0f};
+    M3DVector3f vApex = {0.0f,1.0f,0.0f};
     M3DVector3f vFrontLeft = {-1.0f,-1.0f,1.0f};
     M3DVector3f vFrontRight = {1.0f,-1.0f,1.0f};
-    M3DVector3f vBackLeft = {-1.0f, -1.0f,-1.0f};
-    M3DVector3f vBackRight = {1.0f, -1.0f,-1.0f};
+    M3DVector3f vBackLeft = {-1.0f,-1.0f,-1.0f};
+    M3DVector3f vBackRight = {1.0f,-1.0f,-1.0f};
     
     // 目的:为了临时存储法线向量
     M3DVector3f n;
@@ -295,14 +297,79 @@ void ShutdownRC (void) {
 
 
 void ChangeSize (int w, int h){
+    if ( h == 0) { h = 1;}
+    
+    glViewport(0, 0, w, h);
+    // 设置透视投影
+    viewFrustum.SetPerspective(35.0, float(w)/float(h), 1.0f, 500.0f);
+    
+    // 将投影矩阵加载到projectionMatrix
+    projectionMatrix.LoadMatrix(viewFrustum.GetProjectionMatrix());
+    
+    transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);
     
 }
 void SpecialKeys (int key ,int x, int y){
-    
+    switch (key) {
+        case GLUT_KEY_UP:
+            objectFrame.RotateWorld(m3dDegToRad(-5.0), 1.0f, 0.0f, 0.0f);
+            break;
+        case GLUT_KEY_DOWN:
+            objectFrame.RotateWorld(m3dDegToRad(5.0), 1.0f, 0.0f, 0.0f);
+            break;
+        case GLUT_KEY_LEFT:
+            objectFrame.RotateWorld(m3dDegToRad(-5.0), 0.0f, 1.0f, 0.0f);
+            break;
+        case GLUT_KEY_RIGHT:
+            objectFrame.RotateWorld(m3dDegToRad(5.0), 0.0f, 1.0f, 0.0f);
+            break;
+        default:
+            break;
+    }
+    glutPostRedisplay();
 }
+
 void RenderScene (void){
+    // 光照位置
+    static GLfloat vLightPos[] = {1.0f, 1.0f, 0.0f};
+    // 关照颜色
+    static GLfloat vWhite[] = {1.0f, 1.0f, 1.0f, 1.0f};
     
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    
+    modelViewMatrix.PushMatrix();
+    
+    //观察者
+    M3DMatrix44f mCamera;
+    cameraFrame.GetCameraMatrix(mCamera);
+    modelViewMatrix.MultMatrix(mCamera);
+    
+    //
+    M3DMatrix44f mObjectFrame;
+    objectFrame.GetMatrix(mObjectFrame);
+    modelViewMatrix.MultMatrix(mObjectFrame);
+
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    // 点光源着色器
+    /**
+     参数一:GLT_SHADER_TEXTURE_POINT_LIGHT_DIFF
+     参数二:模型视图矩阵
+     参数三:投影矩阵
+     参数四:光源的位置
+     参数五:光的颜色
+     参数六:图形颜色(如使用了纹理,则设置为0)
+     */
+    shaderManager.UseStockShader(GLT_SHADER_TEXTURE_POINT_LIGHT_DIFF,transformPipeline.GetModelViewMatrix(),transformPipeline.GetProjectionMatrix(),vLightPos,vWhite,0);
+    
+    pyramidBatch.Draw();
+    modelViewMatrix.PopMatrix();
+    
+    glutSwapBuffers();
+
 }
+
+
 int main(int argc, char *argv[]){
     
     gltSetWorkingDirectory(argv[0]);
@@ -312,7 +379,7 @@ int main(int argc, char *argv[]){
     glutInitWindowSize(800, 600);
     glutCreateWindow("Pyramid Texture 金字塔 纹理 学习");
     glutReshapeFunc(ChangeSize);
-    glutSpecialUpFunc(SpecialKeys);
+    glutSpecialFunc(SpecialKeys);
     glutDisplayFunc(RenderScene);
     
     GLenum error = glewInit();

@@ -280,7 +280,7 @@ void SetupRC (void) {
     // 参数二: 缩小时过滤器使用的哪一种
     // 参数三: 放大小时过滤器使用的哪一种
     // 参数四: 纹理坐标环绕方式
-    LoadTGATexture("stone.tga", GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE);
+    LoadTGATexture("brick.tga", GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE);
     
     //4.设置渲染图像的顶点--金字塔
     MakePyramid(pyramidBatch);
